@@ -15,9 +15,9 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
-            if(Auth::user()->usertype=='0')
+            if(Auth::user()->usertype == '0')
             {
-                $doctor = doctor::all();
+                $doctor = Doctor::all();
 
                 return view('user.home',compact('doctor'));
             }
@@ -41,9 +41,9 @@ class HomeController extends Controller
         }
         else
         {
-        $doctor = doctor::all();
+            $doctor = doctor::all();
 
-        return view('user.home',compact('doctor'));
+            return view('user.home',compact('doctor'));
         }
     }
     public function appointment(Request $request)
@@ -80,7 +80,7 @@ class HomeController extends Controller
         }
         else
         {
-          return redirect()->back();
+            return redirect()->back();
         }
 
     }
